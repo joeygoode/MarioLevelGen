@@ -1,5 +1,8 @@
 package dk.itu.mario.level;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Joey
@@ -8,12 +11,5 @@ package dk.itu.mario.level;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Grammar {
-    protected Level level;
-    protected int height;
-    public Grammar(Level level, int height)
-    {
-        this.level = level;
-        this.height = height;
-    }
-    public abstract int generate(int height, int floor);
+    public abstract ArrayList<ArrayList<Character>> generate(Random generator);
 }

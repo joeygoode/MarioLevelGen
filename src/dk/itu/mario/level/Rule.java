@@ -7,20 +7,29 @@ package dk.itu.mario.level;
  * Time: 10:02 PM
  * To change this template use File | Settings | File Templates.
  */
+import javafx.util.Pair;
+
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Rule extends Grammar {
-    ArrayList<Grammar> phrase;
-    public Rule(Level level, int height)
+    ArrayList<ArrayList<Grammar>> evaluations;
+    public Rule()
     {
-        super(level,height);
+        evaluations = new ArrayList<>();
     }
-    public int generate(int x, int floor)
+    void AddEvaluation(ArrayList<Grammar> phrase)
     {
-        for(Grammar g : phrase)
+        evaluations.add(phrase);
+    }
+    public ArrayList<ArrayList<Character>> generate(Random generator)
+    {
+        int index = Math.abs(generator.nextInt()) % evaluations.size();
+        ArrayList<ArrayList<Character>> map = new ArrayList<>();
+        for(Grammar g : evaluations.get(index))
         {
-            x = g.generate(x,floor);
+            map.addAll(g.generate(generator));
         }
-        return x;
+        return map;
     }
 }

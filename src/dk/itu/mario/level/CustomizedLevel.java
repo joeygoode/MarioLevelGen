@@ -1,5 +1,6 @@
 package dk.itu.mario.level;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import dk.itu.mario.MarioInterface.Constraints;
@@ -10,28 +11,21 @@ import dk.itu.mario.engine.sprites.Enemy;
 import dk.itu.mario.engine.LevelFactory;
 
 public class CustomizedLevel extends Level implements LevelInterface {
-    private int type;
-    public CustomizedLevel(int width, int height, long seed, int difficulty, int type, GamePlay playerMetrics)
+    public CustomizedLevel(int width, int height, ArrayList<ArrayList<Character>> map)
     {
         super(width,height);
-        this.type = type;
-        int floor = 10;
-        xExit = width - 5;
-        yExit = floor;
-        Terminal t = new Terminal(height);
-        for (int x = 0; x < width;)
+        type = LevelInterface.TYPE_OVERGROUND;
+        for (int x = 0; x < map.size(); x++)
         {
-            for (int y = 0; y < height; y++)
+            for (int y = 0; y < map.get(0).size(); y++)
             {
-                if (y >= floor)
-                {
-                    x = t.generate(this,x,floor);
-                }
+                this.setBlock(x,y,convertChar(map.get(x).get(y)));
             }
         }
+        xExit = width - 5;
+        yExit = findFloor(map.get(map.size() - 1));
         fixWalls();
     }
-    /*
     Random random;
 
     private static final int ODDS_STRAIGHT = 0;
@@ -51,7 +45,7 @@ public class CustomizedLevel extends Level implements LevelInterface {
     private int coins;
     
     private GamePlay playerM;
-
+    /*
     public CustomizedLevel(int width, int height, long seed, int difficulty,
                            int type, GamePlay playerMetrics) {
         super(width, height);
@@ -564,5 +558,18 @@ public class CustomizedLevel extends Level implements LevelInterface {
                 }
             }
         }
+    }
+    private byte convertChar(char c)
+    {
+        switch(c)
+        {
+            case 'F' : return CustomizedLevel.GROUND;
+            default : return 0;
+        }
+    }
+
+    private int findFloor(ArrayList<Character> column)
+    {
+        return column.indexOf('F');
     }
 }

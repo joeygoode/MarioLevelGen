@@ -1,5 +1,9 @@
 package dk.itu.mario.level;
 
+import javafx.util.Pair;
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Joey
@@ -7,21 +11,19 @@ package dk.itu.mario.level;
  * Time: 9:13 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Terminal {
-    private int height;
-    public Terminal(int height)
+public class Terminal extends Grammar {
+    private ArrayList<ArrayList<Character>> map;
+    public Terminal(ArrayList<ArrayList<Character>> map)
     {
-        this.height = height;
+        this.map = map;
     }
-    public int generate(Level level, int x, int floor)
+    public ArrayList<ArrayList<Character>> generate(Random generator)
     {
-        for (int y = 0; y < height; y++)
-        {
-            if (y >= floor)
-            {
-                level.setBlock(x, y, level.GROUND);
-            }
-        }
-        return x + 1;
+        return this.map;
+    }
+
+    public String toString()
+    {
+        return map.toString();
     }
 }
