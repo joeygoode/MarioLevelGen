@@ -8,6 +8,8 @@ package dk.itu.mario.level;
  * To change this template use File | Settings | File Templates.
  */
 
+import javafx.util.Pair;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -32,7 +34,7 @@ public class GrammarResolver
             throw new RuntimeException("File Not Found");
         }
 
-        TreeMap<String, ArrayList<ArrayList<String>>> unresolvedRules = new TreeMap<>();
+        TreeMap<String, ArrayList<Pair<Integer,ArrayList<String>>>> unresolvedRules = new TreeMap<>();
         TreeMap<String, ArrayList<ArrayList<Character>>> unresolvedTerminals = new TreeMap<>();
         try
         {
@@ -48,16 +50,17 @@ public class GrammarResolver
                     //Put them in the map
                     for (String s : startSymbols)
                     {
+                        String[] weightedString = s.split("\\|");
                         ArrayList<String> unresolvedTargets = new ArrayList<>();
                         for (String w : terminals) {
                             unresolvedTargets.add(w);
                         }
-                        if (unresolvedRules.containsKey(s))
-                            unresolvedRules.get(s).add(unresolvedTargets);
+                        if (unresolvedRules.containsKey(weightedString[0]))
+                            unresolvedRules.get(weightedString[0]).add(new Pair<>(Integer.parseInt(weightedString[1]),unresolvedTargets));
                         else {
-                            ArrayList<ArrayList<String>> destinations = new ArrayList<>();
-                            destinations.add(unresolvedTargets);
-                            unresolvedRules.put(s, destinations);
+                            ArrayList<Pair<Integer,ArrayList<String>>> destinations = new ArrayList<>();
+                            destinations.add(new Pair<>(Integer.parseInt(weightedString[1]),unresolvedTargets));
+                            unresolvedRules.put(weightedString[0], destinations);
                         }
                     }
                 }
@@ -114,31 +117,38 @@ public class GrammarResolver
         // Add each rule without evaluating it.
         for (String s : symbols)
         {
-            grammar.put(s,new Rule());
+            grammar.put(s,new Rule(s));
         }
-        System.out.println(grammar);
+
         // Add all evaluations to each rule
         for (String s : symbols)
         {
             Rule r = (Rule) grammar.get(s);
-            ArrayList<ArrayList<String>> evaluations = unresolvedRules.get(s);
-            for (ArrayList<String> unresolvedEvaluation : evaluations)
+            ArrayList<Pair<Integer,ArrayList<String>>> evaluations = unresolvedRules.get(s);
+            for (Pair<Integer,ArrayList<String>> unresolvedEvaluation : evaluations)
             {
                 //Evaluate each symbol in the evaluation.
                 ArrayList<Grammar> evaluation = new ArrayList<>();
-                for (String symbol : unresolvedEvaluation)
+                for (String symbol : unresolvedEvaluation.getValue())
                 {
                     evaluation.add(grammar.get(symbol));
                 }
-                r.AddEvaluation(evaluation);
+                r.AddEvaluation(new Pair<>(unresolvedEvaluation.getKey(),evaluation));
             }
         }
     }
 
     public ArrayList<ArrayList<Character>> generate(long seed)
     {
-        Random generator = new Random(seed);
+        Random generator = new Random();
+        try
+        {
         return grammar.get("S").generate(generator);
+        }
+        catch (StackOverflowError e)
+        {
+            return generate(seed);
+        }
     }
     private ArrayList<ArrayList<Character>> flip(ArrayList<ArrayList<Character>> terminals)
     {

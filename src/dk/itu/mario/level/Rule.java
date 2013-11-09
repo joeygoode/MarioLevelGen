@@ -13,22 +13,35 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Rule extends Grammar {
-    ArrayList<ArrayList<Grammar>> evaluations;
-    public Rule()
+    private String symbol;
+    private ArrayList<Pair<Integer,ArrayList<Grammar>>> evaluations;
+    private int weightSum;
+    public Rule(String symbol)
     {
+        this.symbol = symbol;
         evaluations = new ArrayList<>();
     }
-    void AddEvaluation(ArrayList<Grammar> phrase)
+    void AddEvaluation(Pair<Integer,ArrayList<Grammar>> phrase)
     {
         evaluations.add(phrase);
+        weightSum += phrase.getKey();
     }
     public ArrayList<ArrayList<Character>> generate(Random generator)
     {
-        int index = Math.abs(generator.nextInt()) % evaluations.size();
+        int index = Math.abs(generator.nextInt()) % weightSum;
         ArrayList<ArrayList<Character>> map = new ArrayList<>();
-        for(Grammar g : evaluations.get(index))
+        int sum = 0;
+        for(Pair<Integer,ArrayList<Grammar>> evaluation : evaluations)
         {
-            map.addAll(g.generate(generator));
+            sum += evaluation.getKey();
+            if (sum > index)
+            {
+                for(Grammar g : evaluation.getValue())
+                {
+                    map.addAll(g.generate(generator));
+                }
+                break;
+            }
         }
         return map;
     }

@@ -23,6 +23,7 @@ public class CustomizedLevel extends Level implements LevelInterface {
             }
         }
         xExit = width - 5;
+        System.out.println(map);
         yExit = findFloor(map.get(map.size() - 1));
         fixWalls();
     }
