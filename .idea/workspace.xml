@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f729b041-bc6e-4bce-8d6e-4d5178055312" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level.cfg" afterPath="$PROJECT_DIR$/Level.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java" />
     </list>
     <ignored path="MarioLevelComp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383975854054" ignored="false" />
-    <file path="/CustomizedLevelGenerator.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383978378236" ignored="false" />
+    <file path="/CustomizedLevelGenerator.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1384025428703" ignored="false" />
     <file path="/CustomizedLevel.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383981137827" ignored="false" />
     <file path="/Terminal.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383975029996" ignored="false" />
     <file path="/Grammar.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383974893869" ignored="false" />
@@ -86,10 +81,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CustomizedLevelGenerator.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CustomizedLevelGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="31" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+            <state line="21" column="50" selection-start="822" selection-end="822" vertical-scroll-proportion="0.36624774">
               <folding />
             </state>
           </provider>
@@ -106,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomizedLevel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CustomizedLevel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="108" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.24416517">
+            <state line="28" column="108" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -206,8 +201,8 @@
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
       </list>
     </option>
   </component>
@@ -539,7 +534,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="2" width="1918" height="1030" extended-state="1" />
+    <frame x="2" y="2" width="1918" height="1030" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -697,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="31" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="64" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
@@ -738,7 +726,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="108" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.24416517">
+        <state line="28" column="108" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="50" selection-start="822" selection-end="822" vertical-scroll-proportion="0.36624774">
           <folding />
         </state>
       </provider>

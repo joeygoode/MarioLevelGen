@@ -19,7 +19,7 @@ public class CustomizedLevelGenerator implements LevelGenerator{
         long seed = random.nextLong();
         System.out.println(seed);
         ArrayList<ArrayList<Character>> map = g.generate(seed);
-        while(map.size() < 200)
+        while(map.size() < 200 || map.size() > 400)
         {
             map = g.generate(++seed);
         }
