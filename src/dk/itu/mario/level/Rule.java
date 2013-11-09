@@ -45,4 +45,27 @@ public class Rule extends Grammar {
         }
         return map;
     }
+    public ArrayList<Grammar> evaluate(Random generator)
+    {
+        int index = Math.abs(generator.nextInt()) % weightSum;
+        ArrayList<Grammar> evaluation = new ArrayList<>();
+        int sum = 0;
+        for(Pair<Integer,ArrayList<Grammar>> possibleEvaluation : evaluations)
+        {
+            sum += possibleEvaluation.getKey();
+            if (sum > index)
+            {
+                for(Grammar g : possibleEvaluation.getValue())
+                {
+                    evaluation.add(g);
+                }
+                break;
+            }
+        }
+        return evaluation;
+    }
+    public boolean needsEvaluation()
+    {
+        return true;
+    }
 }

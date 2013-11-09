@@ -21,7 +21,14 @@ public class Terminal extends Grammar {
     {
         return this.map;
     }
-
+    public boolean needsEvaluation()
+    {
+        return false;
+    }
+    public ArrayList<Grammar> evaluate(Random generator)
+    {
+        throw new RuntimeException("Cannot evaluate a terminal");
+    }
     public String toString()
     {
         return map.toString();

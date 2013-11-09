@@ -2,25 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f729b041-bc6e-4bce-8d6e-4d5178055312" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Joey\Repositories\MarioLevelComp\MarioLevelComp.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level.cfg" afterPath="$PROJECT_DIR$/Level.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/RandomLevel.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/RandomLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java" />
     </list>
     <ignored path="MarioLevelComp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383953362440" ignored="false" />
-    <file path="/CustomizedLevelGenerator.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383943032817" ignored="false" />
-    <file path="/CustomizedLevel.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383947121591" ignored="false" />
-    <file path="/Terminal.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383942996124" ignored="false" />
-    <file path="/Grammar.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383942885260" ignored="false" />
-    <file path="/Rule.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383955505462" ignored="false" />
-    <file path="/GrammarResolver.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383955544636" ignored="false" />
+    <file path="/fragment.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383975854054" ignored="false" />
+    <file path="/CustomizedLevelGenerator.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383978378236" ignored="false" />
+    <file path="/CustomizedLevel.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383981137827" ignored="false" />
+    <file path="/Terminal.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383975029996" ignored="false" />
+    <file path="/Grammar.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383974893869" ignored="false" />
+    <file path="/Rule.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383974985957" ignored="false" />
+    <file path="/GrammarResolver.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383975817781" ignored="false" />
     <file path="/Dummy.txt" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383945954795" ignored="false" />
     <file path="/Level.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383928974188" ignored="false" />
     <file path="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" changelist="f729b041-bc6e-4bce-8d6e-4d5178055312" time="1383937155951" ignored="false" />
@@ -79,23 +77,6 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" line="18" class="dk.itu.mario.level.generator.CustomizedLevelGenerator" package="dk.itu.mario.level.generator">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -108,7 +89,7 @@
       <file leaf-file-name="CustomizedLevelGenerator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="59" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
+            <state line="23" column="31" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,11 +106,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomizedLevel.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CustomizedLevel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="137" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0">
+            <state line="28" column="108" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.24416517">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Level.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Level.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="98" column="30" selection-start="3353" selection-end="3353" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,7 +129,7 @@
       <file leaf-file-name="Grammar.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="65" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0">
+            <state line="14" column="64" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,7 +138,7 @@
       <file leaf-file-name="Terminal.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="518" selection-end="543" vertical-scroll-proportion="0.0">
+            <state line="29" column="65" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,16 +147,16 @@
       <file leaf-file-name="Rule.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="5" selection-start="68" selection-end="69" vertical-scroll-proportion="10.68">
+            <state line="68" column="0" selection-start="1937" selection-end="1937" vertical-scroll-proportion="-15.16">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrammarResolver.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GrammarResolver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="102" selection-start="5935" selection-end="5935" vertical-scroll-proportion="0.25">
+            <state line="223" column="39" selection-start="8309" selection-end="8411" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -211,11 +203,11 @@
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/Terminal.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Level.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" />
       </list>
     </option>
   </component>
@@ -370,11 +362,11 @@
     </configuration>
     <configuration default="false" name="GrammarResolver" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="dk.itu.mario.level.GrammarResolver" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="-Xss68m" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -486,8 +478,8 @@
     <recent_temporary>
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.PlayCustomized" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Play" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GrammarResolver" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GrammarResolver" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Play" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -552,23 +544,23 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41108546" sideWeight="0.7491909" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32678983" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290993" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25134844" sideWeight="0.67321014" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32678983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -663,15 +655,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="49" selection-start="2998" selection-end="2998" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelSceneTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="25" selection-start="207" selection-end="207" vertical-scroll-proportion="0.23817864" />
@@ -691,22 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/Mario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="56" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="59" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/Play.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
@@ -716,37 +683,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java">
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="137" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="65" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="518" selection-end="543" vertical-scroll-proportion="0.0">
+        <state line="223" column="39" selection-start="8309" selection-end="8411" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Rule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="5" selection-start="68" selection-end="69" vertical-scroll-proportion="10.68">
+        <state line="68" column="0" selection-start="1937" selection-end="1937" vertical-scroll-proportion="-15.16">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/GrammarResolver.java">
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="102" selection-start="5935" selection-end="5935" vertical-scroll-proportion="0.25">
+        <state line="23" column="31" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Grammar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="64" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Terminal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="65" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/Mario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="56" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="30" selection-start="3353" selection-end="3353" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="108" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.24416517">
           <folding />
         </state>
       </provider>

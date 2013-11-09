@@ -12,4 +12,6 @@ import java.util.Random;
  */
 public abstract class Grammar {
     public abstract ArrayList<ArrayList<Character>> generate(Random generator);
+    public abstract ArrayList<Grammar> evaluate(Random generator);
+    public abstract boolean needsEvaluation();
 }

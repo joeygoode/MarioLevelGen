@@ -15,8 +15,14 @@ public class CustomizedLevelGenerator implements LevelGenerator{
 
 	public LevelInterface generateLevel(GamePlay playerMetrics) {
         GrammarResolver g = new GrammarResolver(new File("Level.cfg"));
-        ArrayList<ArrayList<Character>> map = g.generate(17);
-        System.out.println(map);
+        Random random = new Random();
+        long seed = random.nextLong();
+        System.out.println(seed);
+        ArrayList<ArrayList<Character>> map = g.generate(seed);
+        while(map.size() < 200)
+        {
+            map = g.generate(++seed);
+        }
         LevelInterface level = new CustomizedLevel(map.size(),15,map);
 		return level;
 	}

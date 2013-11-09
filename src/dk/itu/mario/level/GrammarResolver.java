@@ -10,11 +10,7 @@ package dk.itu.mario.level;
 
 import javafx.util.Pair;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class GrammarResolver
@@ -140,16 +136,35 @@ public class GrammarResolver
 
     public ArrayList<ArrayList<Character>> generate(long seed)
     {
-        Random generator = new Random();
-        try
+        Random generator = new Random(seed);
+        ArrayList<Grammar> grammars = new ArrayList<>();
+        grammars.add(grammar.get("S"));
+        boolean evaluated = true;
+        //Loop while we're still evaluating things.
+        while(evaluated)
         {
-        return grammar.get("S").generate(generator);
+            evaluated = false;
+            for(int i = 0; i < grammars.size(); i++)
+            {
+                if(grammars.get(i).needsEvaluation())
+                {
+                    ArrayList<Grammar> evaluation = grammars.get(i).evaluate(generator);
+                    grammars.remove(i);
+                    grammars.addAll(i,evaluation);
+                    i += evaluation.size();
+                    evaluated = true;
+                }
+            }
         }
-        catch (StackOverflowError e)
+        //Now every element of grammars is a terminal.
+        ArrayList<ArrayList<Character>> map = new ArrayList<>();
+        for (Grammar g : grammars)
         {
-            return generate(seed);
+            map.addAll(g.generate(generator));
         }
+        return map;
     }
+
     private ArrayList<ArrayList<Character>> flip(ArrayList<ArrayList<Character>> terminals)
     {
         //Make sure the terminal isn't empty
@@ -169,9 +184,45 @@ public class GrammarResolver
         }
         return lx;
     }
+    public void generateToFile(long seed)
+    {
+        ArrayList<ArrayList<Character>> map = flip(generate(seed));
+        PrintWriter pr = null;
+        try
+        {
+            pr = new PrintWriter("Level.txt","UTF-8");
+        }
+        catch(FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch(UnsupportedEncodingException e)
+        {
+            e.printStackTrace();
+        }
+
+        for (ArrayList<Character> x : map)
+        {
+            String s = "";
+            for (Character y : x)
+            {
+                s += y;
+            }
+            pr.println(s);
+        }
+        pr.close();
+    }
     public String toString()
     {
         return grammar.toString();
+    }
+    public static void main(String[] args)
+    {
+        GrammarResolver g = new GrammarResolver(new File("level.cfg"));
+        Random random = new Random();
+        long seed = random.nextLong();
+        System.out.println(seed);
+        g.generateToFile(seed);
     }
 
 

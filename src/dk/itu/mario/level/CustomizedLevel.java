@@ -14,11 +14,34 @@ public class CustomizedLevel extends Level implements LevelInterface {
     public CustomizedLevel(int width, int height, ArrayList<ArrayList<Character>> map)
     {
         super(width,height);
+        Random random = new Random();
         type = LevelInterface.TYPE_OVERGROUND;
         for (int x = 0; x < map.size(); x++)
         {
             for (int y = 0; y < map.get(0).size(); y++)
             {
+                if(map.get(x).get(y) == 'E')
+                {
+                    int type;
+                    boolean winged = false;
+                    int i = random.nextInt() % 3;
+                    switch(i)
+                    {
+                        case 0 : type = Enemy.ENEMY_RED_KOOPA;
+                        case 1 : type = Enemy.ENEMY_GREEN_KOOPA;
+                        default : type = Enemy.ENEMY_GOOMBA;
+                    }
+                    if(random.nextInt(2) == 0)
+                    {
+                        winged = true;
+                    }
+                    setSpriteTemplate(x,y,new SpriteTemplate(type,winged));
+                }
+
+                if (map.get(x).get(y) == 'O' && random.nextInt() % 3 == 0)
+                {
+                    setSpriteTemplate(x,y,new SpriteTemplate(Enemy.ENEMY_FLOWER, false));
+                }
                 this.setBlock(x,y,convertChar(map.get(x).get(y)));
             }
         }
@@ -565,9 +588,29 @@ public class CustomizedLevel extends Level implements LevelInterface {
         switch(c)
         {
             case 'F' : return CustomizedLevel.GROUND;
+            case 'B' : return randomizedBlock();
+            case 'T' : return (byte) (14 + 0 * 16);
+            case 'J' : return (byte) (14 + 1 * 16);
+            case 'C' : return (byte) (14 + 2 * 16);
+            case 'O' : return CustomizedLevel.TUBE_TOP_LEFT;
+            case 'P' : return CustomizedLevel.TUBE_TOP_RIGHT;
+            case 'R' : return CustomizedLevel.TUBE_SIDE_RIGHT;
+            case 'L' : return CustomizedLevel.TUBE_SIDE_LEFT;
             default : return 0;
         }
     }
+    private byte randomizedBlock()
+    {
+        Random random = new Random();
+        int i = random.nextInt() % 10;
+        if (i == 0)
+            return CustomizedLevel.BLOCK_POWERUP;
+        else if ( i < 3)
+            return CustomizedLevel.BLOCK_COIN;
+        else
+            return CustomizedLevel.BLOCK_EMPTY;
+    }
+
 
     private int findFloor(ArrayList<Character> column)
     {
