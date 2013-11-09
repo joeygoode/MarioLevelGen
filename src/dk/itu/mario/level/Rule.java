@@ -26,10 +26,10 @@ public class Rule extends Grammar {
         evaluations.add(phrase);
         weightSum += phrase.getKey();
     }
-    public ArrayList<ArrayList<Character>> generate(Random generator)
+    public Grid generate(Random generator)
     {
         int index = Math.abs(generator.nextInt()) % weightSum;
-        ArrayList<ArrayList<Character>> map = new ArrayList<>();
+        Grid map = new Grid();
         int sum = 0;
         for(Pair<Integer,ArrayList<Grammar>> evaluation : evaluations)
         {
@@ -38,7 +38,7 @@ public class Rule extends Grammar {
             {
                 for(Grammar g : evaluation.getValue())
                 {
-                    map.addAll(g.generate(generator));
+                    map.append(g.generate(generator));
                 }
                 break;
             }

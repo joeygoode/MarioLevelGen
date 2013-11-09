@@ -10,6 +10,7 @@ import dk.itu.mario.MarioInterface.LevelGenerator;
 import dk.itu.mario.MarioInterface.LevelInterface;
 import dk.itu.mario.level.CustomizedLevel;
 import dk.itu.mario.level.GrammarResolver;
+import dk.itu.mario.level.Grid;
 
 public class CustomizedLevelGenerator implements LevelGenerator{
 
@@ -18,12 +19,12 @@ public class CustomizedLevelGenerator implements LevelGenerator{
         Random random = new Random();
         long seed = random.nextLong();
         System.out.println(seed);
-        ArrayList<ArrayList<Character>> map = g.generate(seed);
-        while(map.size() < 200 || map.size() > 400)
+        Grid map = g.generate(seed);
+        while(map.getMap().size() < 200 || map.getMap().size() > 400)
         {
             map = g.generate(++seed);
         }
-        LevelInterface level = new CustomizedLevel(map.size(),15,map);
+        LevelInterface level = new CustomizedLevel(map.getMap().size(),15,map);
 		return level;
 	}
 

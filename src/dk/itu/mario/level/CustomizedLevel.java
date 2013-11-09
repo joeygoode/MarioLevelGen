@@ -11,16 +11,17 @@ import dk.itu.mario.engine.sprites.Enemy;
 import dk.itu.mario.engine.LevelFactory;
 
 public class CustomizedLevel extends Level implements LevelInterface {
-    public CustomizedLevel(int width, int height, ArrayList<ArrayList<Character>> map)
+    public CustomizedLevel(int width, int height, Grid grid)
     {
         super(width,height);
         Random random = new Random();
         type = LevelInterface.TYPE_OVERGROUND;
+        ArrayList<ArrayList<Tile>> map = grid.getMap();
         for (int x = 0; x < map.size(); x++)
         {
             for (int y = 0; y < map.get(0).size(); y++)
             {
-                if(map.get(x).get(y) == 'E')
+                if(map.get(x).get(y).get() == 'E')
                 {
                     int type;
                     boolean winged = false;
@@ -38,11 +39,11 @@ public class CustomizedLevel extends Level implements LevelInterface {
                     setSpriteTemplate(x,y,new SpriteTemplate(type,winged));
                 }
 
-                if (map.get(x).get(y) == 'O' && random.nextInt() % 3 == 0)
+                if (map.get(x).get(y).get() == 'O' && random.nextInt() % 3 == 0)
                 {
                     setSpriteTemplate(x,y,new SpriteTemplate(Enemy.ENEMY_FLOWER, false));
                 }
-                this.setBlock(x,y,convertChar(map.get(x).get(y)));
+                this.setBlock(x,y,convertChar(map.get(x).get(y).get()));
             }
         }
         xExit = width - 5;
@@ -591,7 +592,8 @@ public class CustomizedLevel extends Level implements LevelInterface {
             case 'B' : return randomizedBlock();
             case 'T' : return (byte) (14 + 0 * 16);
             case 'J' : return (byte) (14 + 1 * 16);
-            case 'C' : return (byte) (14 + 2 * 16);
+            case 'H' : return (byte) (14 + 2 * 16);
+            case 'C' : return CustomizedLevel.COIN;
             case 'O' : return CustomizedLevel.TUBE_TOP_LEFT;
             case 'P' : return CustomizedLevel.TUBE_TOP_RIGHT;
             case 'R' : return CustomizedLevel.TUBE_SIDE_RIGHT;
@@ -612,8 +614,8 @@ public class CustomizedLevel extends Level implements LevelInterface {
     }
 
 
-    private int findFloor(ArrayList<Character> column)
+    private int findFloor(ArrayList<Tile> column)
     {
-        return column.indexOf('F');
+        return column.indexOf(new Tile('F'));
     }
 }

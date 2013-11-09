@@ -31,7 +31,7 @@ public class GrammarResolver
         }
 
         TreeMap<String, ArrayList<Pair<Integer,ArrayList<String>>>> unresolvedRules = new TreeMap<>();
-        TreeMap<String, ArrayList<ArrayList<Character>>> unresolvedTerminals = new TreeMap<>();
+        TreeMap<String, Grid> unresolvedTerminals = new TreeMap<>();
         try
         {
             //See if this line is a rule
@@ -69,7 +69,7 @@ public class GrammarResolver
                     if (!line.equals("{"))
                         throw new RuntimeException("Expected \"{\" but found \""+line+"\"");
                     //Set up the ArrayLists for the level.
-                    ArrayList<ArrayList<Character>> y = new ArrayList<>();
+                    Grid y = new Grid();
                     // Read each line and assign blocks.
                     for (line = reader.readLine(); !line.equals("}"); line = reader.readLine()) {
                         if (line == null)
@@ -77,20 +77,20 @@ public class GrammarResolver
                         line.trim();
                         line.replaceAll("\\s", "");
                         //If the line is the wrong length, reject the file.
-                        if (!y.isEmpty()) {
-                            if (y.get(0).size() != line.length())
+                        if (!y.getMap().isEmpty()) {
+                            if (y.getMap().get(0).size() != line.length())
                             {
-                                throw new RuntimeException(terminal + " is improperly formatted:  Line lengths not equal.  Offending line: " + line + " | Length = " + line.length() + " Expected: " + y.get(0).size());
+                                throw new RuntimeException(terminal + " is improperly formatted:  Line lengths not equal.  Offending line: " + line + " | Length = " + line.length() + " Expected: " + y.getMap().get(0).size());
                             }
                         }
                         //Add each character in the line to the x array.
                         char[] characters = line.toCharArray();
-                        ArrayList<Character> x = new ArrayList<>();
+                        ArrayList<Tile> x = new ArrayList<>();
                         for (char c : characters) {
-                            x.add(c);
+                            x.add(new Tile(c));
                         }
                         //Add the x list to the y list.
-                        y.add(x);
+                        y.append(x);
                     }
                     unresolvedTerminals.put(terminal, flip(y));
                 }
@@ -127,14 +127,31 @@ public class GrammarResolver
                 ArrayList<Grammar> evaluation = new ArrayList<>();
                 for (String symbol : unresolvedEvaluation.getValue())
                 {
-                    evaluation.add(grammar.get(symbol));
+                    if (symbol.contains("&"))
+                    {
+                        String[] symbolGroup = symbol.split("\\&");
+                        Group group =  new Group();
+                        for (String w : symbolGroup)
+                        {
+                            if(grammar.get(w) == null)
+                                throw new RuntimeException("Unresolved symbol: " + w);
+                            group.addParallelEvaluation(grammar.get(w));
+                            evaluation.add(group);
+                        }
+                    }
+                    else
+                    {
+                        if(grammar.get(symbol) == null)
+                            throw new RuntimeException("Unresolved symbol: " + symbol);
+                        evaluation.add(grammar.get(symbol));
+                    }
                 }
                 r.AddEvaluation(new Pair<>(unresolvedEvaluation.getKey(),evaluation));
             }
         }
     }
 
-    public ArrayList<ArrayList<Character>> generate(long seed)
+    public Grid generate(long seed)
     {
         Random generator = new Random(seed);
         ArrayList<Grammar> grammars = new ArrayList<>();
@@ -157,36 +174,36 @@ public class GrammarResolver
             }
         }
         //Now every element of grammars is a terminal.
-        ArrayList<ArrayList<Character>> map = new ArrayList<>();
+        Grid map = new Grid();
         for (Grammar g : grammars)
         {
-            map.addAll(g.generate(generator));
+            map.append(g.generate(generator));
         }
         return map;
     }
 
-    private ArrayList<ArrayList<Character>> flip(ArrayList<ArrayList<Character>> terminals)
+    private Grid flip(Grid terminals)
     {
         //Make sure the terminal isn't empty
-        if (terminals.isEmpty())
+        if (terminals.getMap().isEmpty())
             return terminals;
-        if (terminals.get(0).isEmpty())
+        if (terminals.getMap().get(0).isEmpty())
             return terminals;
-        ArrayList<ArrayList<Character>> lx = new ArrayList<>();
-        for(int x = 0; x < terminals.get(0).size(); x++)
+        Grid lx = new Grid();
+        for(int x = 0; x < terminals.getMap().get(0).size(); x++)
         {
-            ArrayList<Character> ly = new ArrayList<>();
-            for(int y = 0; y < terminals.size(); y++)
+            ArrayList<Tile> ly = new ArrayList<>();
+            for(int y = 0; y < terminals.getMap().size(); y++)
             {
-                ly.add(terminals.get(y).get(x));
+                ly.add(terminals.getMap().get(y).get(x));
             }
-            lx.add(ly);
+            lx.append(ly);
         }
         return lx;
     }
     public void generateToFile(long seed)
     {
-        ArrayList<ArrayList<Character>> map = flip(generate(seed));
+        Grid map = flip(generate(seed));
         PrintWriter pr = null;
         try
         {
@@ -201,12 +218,12 @@ public class GrammarResolver
             e.printStackTrace();
         }
 
-        for (ArrayList<Character> x : map)
+        for (ArrayList<Tile> x : map.getMap())
         {
             String s = "";
-            for (Character y : x)
+            for (Tile y : x)
             {
-                s += y;
+                s += y.get();
             }
             pr.println(s);
         }

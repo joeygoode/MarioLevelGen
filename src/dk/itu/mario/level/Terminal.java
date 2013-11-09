@@ -12,12 +12,12 @@ import java.util.Random;
  * To change this template use File | Settings | File Templates.
  */
 public class Terminal extends Grammar {
-    private ArrayList<ArrayList<Character>> map;
-    public Terminal(ArrayList<ArrayList<Character>> map)
+    private Grid map;
+    public Terminal(Grid map)
     {
         this.map = map;
     }
-    public ArrayList<ArrayList<Character>> generate(Random generator)
+    public Grid generate(Random generator)
     {
         return this.map;
     }
