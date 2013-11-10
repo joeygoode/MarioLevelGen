@@ -25,11 +25,13 @@ public class CustomizedLevel extends Level implements LevelInterface {
                 {
                     int type;
                     boolean winged = false;
-                    int i = random.nextInt() % 3;
+                    int i = Math.abs(random.nextInt()) % 3;
                     switch(i)
                     {
                         case 0 : type = Enemy.ENEMY_RED_KOOPA;
+                            break;
                         case 1 : type = Enemy.ENEMY_GREEN_KOOPA;
+                            break;
                         default : type = Enemy.ENEMY_GOOMBA;
                     }
                     if(random.nextInt(2) == 0)
@@ -589,7 +591,8 @@ public class CustomizedLevel extends Level implements LevelInterface {
         switch(c)
         {
             case 'F' : return CustomizedLevel.GROUND;
-            case 'B' : return randomizedBlock();
+            case 'Q' : return randomizedBlock();
+            case 'B' : return CustomizedLevel.BLOCK_EMPTY;
             case 'T' : return (byte) (14 + 0 * 16);
             case 'J' : return (byte) (14 + 1 * 16);
             case 'H' : return (byte) (14 + 2 * 16);
